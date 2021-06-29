@@ -1,0 +1,12 @@
+.line__wrapper {
+  background-color: rgb(255, 255, 255);
+}
+.gr {
+  box-shadow: 0 0 10px 5px #66de93;
+}
+.rd {
+  box-shadow: 0 0 10px 5px #ff616d;
+}
+.yl {
+  box-shadow: 0 0 10px 5px #f5a962;
+}

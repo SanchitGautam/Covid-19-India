@@ -1,0 +1,15 @@
+.news {
+  margin-top: 10px;
+  overflow: scroll;
+  height: 180px;
+  color: #6a5d5d;
+}
+.news td {
+  display: flex;
+  flex: 1;
+  padding: 0.2rem;
+}
+.news tr:nth-of-type(odd) {
+  background-color: #5cdb95;
+  color: rgb(255, 255, 255) !important;
+}
