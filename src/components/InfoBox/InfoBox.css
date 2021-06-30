@@ -1,6 +1,10 @@
 .infoBox {
   cursor: pointer;
 }
+.infoBox:hover{
+  transform: scale(1.02);
+  transition: 0.2s ease-in;
+}
 .infoBox__1{
   border-top: 5px solid #f5a962;
   border-bottom: 5px solid #f5a962;
@@ -13,7 +17,15 @@
   border-top: 5px solid #ff616d;
   border-bottom: 5px solid #ff616d;
 }
-
+.info__1:hover{
+  box-shadow: 0 0 5px 2px #f5a9627e;
+}
+.info__2:hover{
+  box-shadow: 0 0 5px 2px #66de9480;
+}
+.info__3:hover{
+  box-shadow: 0 0 5px 2px #ff616e80;
+}
 .infoBox__cases {
   font-weight: 550;
   font-size: 1.5rem;

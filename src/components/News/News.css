@@ -1,15 +1,21 @@
 .news {
-  margin-top: 10px;
-  overflow: scroll;
+  margin-top: 0px;
+  overflow-y: scroll;
   height: 180px;
-  color: #6a5d5d;
 }
-.news td {
+.tr {
+  cursor: pointer;
   display: flex;
-  flex: 1;
+  flex-direction: column;
   padding: 0.2rem;
+  margin: 10px;
 }
-.news tr:nth-of-type(odd) {
-  background-color: #5cdb95;
-  color: rgb(255, 255, 255) !important;
+.tr:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease-in;
+  box-shadow: 0 0 8px 4px #05386b46;
+}
+.tr:nth-of-type(odd) {
+  background-color: #05386bce;
+  color: rgb(255, 255, 255);
 }

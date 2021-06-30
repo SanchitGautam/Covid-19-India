@@ -1,22 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 .footer {
-  height: 30vh;
-  width: 100%;
+  height: 25vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-h1 {
-  font-weight: 500;
-  font-size: 2rem;
-  margin-bottom: 0rem;
-  letter-spacing: 1px;
-  word-spacing: 2px;
-  margin-bottom: 0.7rem;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 p {
   font-size: 0.9rem;
+}
+.cp{
+  color:#EDF5E1;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 0.4rem;
+  background: #05386B;
 }
 .social_links {
   padding: 0.2rem;

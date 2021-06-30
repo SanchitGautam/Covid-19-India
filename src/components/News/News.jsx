@@ -5,12 +5,12 @@ function News({ news }) {
   return (
     <div className="news">
       {news.map(({ update, timestamp }) => (
-        <tr>
-          <td>
+        <div className="tr">
+          <div>
             <strong>{'" ' + update + ' "'}</strong>
-          </td>
-          <td>{time(timestamp)}</td>
-        </tr>
+          </div>
+          <div>{time(timestamp)}</div>
+        </div>
       ))}
     </div>
   );

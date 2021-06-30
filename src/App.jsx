@@ -11,19 +11,18 @@ import {
 import InfoBox from "./components/InfoBox/InfoBox";
 import Table from "./components/Table/Table";
 import News from "./components/News/News";
-import { sortData, sortData1 } from "./util";
+import { sortData, sortData1, datetime } from "./util";
 import Temp from "./components/Graph/Graph";
 import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-
 function App() {
+  
   const [states, setStates] = useState([]);
   const [stateInfo, setStateInfo] = useState({});
   const [tableData, setTableData] = useState([]);
   const [newsData, setNewsData] = useState([]);
   const [but, setBut] = useState(1);
   const [b, setB] = useState();
-
+  const [dt, setDt] = useState();
   useEffect(() => {
     const getStatesData = async () => {
       await fetch("https://api.covid19india.org/data.json")
@@ -41,6 +40,7 @@ function App() {
           setTableData(xyz);
           setStates(states1);
           setStateInfo(stateIf[0]);
+          setDt(datetime(stateIf[0].lastupdatedtime));
         });
     };
     getStatesData();
@@ -68,16 +68,17 @@ function App() {
           return x.statecode === stateCode;
         });
         setStateInfo(stateIf[0]);
+        setDt(datetime(stateIf[0].lastupdatedtime));
       });
   };
-  console.log(stateInfo.statecode);
-  console.log(stateInfo.lastupdatedtime);
+  // console.log(stateInfo);
+  // console.log(stateInfo.lastupdatedtime);
 
   return (
-    <div>
+    <div className="tracker">
       <div className="app">
         <div className="app__left">
-          <Header />
+          {/* <Header /> */}
           <div className="app__header">
             <h1>
               Covid-19 <strong>INDIA</strong>
@@ -93,11 +94,11 @@ function App() {
                   value={stateInfo.state}
                   label="Select State"
                 >
-                  <MenuItem value="" disabled>
+                  <MenuItem className="menu" value="" disabled>
                     Select State
                   </MenuItem>
                   {states.map((state) => (
-                    <MenuItem value={state.value}>{state.name}</MenuItem>
+                    <MenuItem className="menu" value={state.value}>{state.name}</MenuItem>
                   ))}
                 </Select>
               </FormControl>
@@ -118,7 +119,7 @@ function App() {
                 title="Confirmed"
                 cases={stateInfo.confirmed}
                 total={stateInfo.deltaconfirmed}
-                update={stateInfo.lastupdatedtime}
+                update={dt}
               />
             </div>
             {/* <div
@@ -146,7 +147,7 @@ function App() {
                 title="Recovered"
                 cases={stateInfo.recovered}
                 total={stateInfo.deltarecovered}
-                update={stateInfo.lastupdatedtime}
+                update={dt}
               />
             </div>
             <div
@@ -162,7 +163,7 @@ function App() {
                 title="Deaths"
                 cases={stateInfo.deaths}
                 total={stateInfo.deltadeaths}
-                update={stateInfo.lastupdatedtime}
+                update={dt}
               />
             </div>
           </div>
@@ -176,14 +177,14 @@ function App() {
         <div className="app__right">
           <Card>
             <CardContent>
-              <h3> Live Active Cases</h3>
+              <h6> Live Active Cases</h6>
               <Table states={tableData} />
             </CardContent>
           </Card>
           <br></br>
           <Card>
             <CardContent>
-              <h3> Latest Updates</h3>
+              <h6> Latest Updates</h6>
               <News news={newsData} />
             </CardContent>
           </Card>

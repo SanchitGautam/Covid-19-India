@@ -8,10 +8,11 @@ function sign(s) {
   if (s === "0") return "❤";
   else if (s) return s1.concat(s);
 }
+
 function InfoBox({ active, c, t, title, cases, total, update }) {
   return (
     <div className="infoBox">
-    <Card className={`infoBox ${active && c===1 &&"infoBox__1"} ${active && c===2 &&"infoBox__2"} ${active && c===3 &&"infoBox__3"} ${active && c===4 &&"infoBox__4"}`}>
+    <Card className={`infoBox ${active && c===1 &&"infoBox__1"} ${active && c===2 &&"infoBox__2"} ${active && c===3 &&"infoBox__3"} ${t===1 &&"info__1"} ${t===2 &&"info__2"} ${t===3 &&"info__3"}`}>
       <CardContent>
         <Typography className="infoBox__title" color="textSecondary">
           {title}

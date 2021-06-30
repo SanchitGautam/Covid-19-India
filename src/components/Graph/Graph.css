@@ -1,12 +1,26 @@
 .line__wrapper {
+  border-radius: 5px;
   background-color: rgb(255, 255, 255);
 }
+.line__wrapper:hover {
+  transform: scale(1.02);
+  transition: 0.4s ease-in;
+}
 .gr {
+  box-shadow: 0 0 10px 5px #66de9480;
+}
+.gr:hover {
   box-shadow: 0 0 10px 5px #66de93;
 }
 .rd {
+  box-shadow: 0 0 10px 5px #ff616e80;
+}
+.rd:hover {
   box-shadow: 0 0 10px 5px #ff616d;
 }
 .yl {
+  box-shadow: 0 0 10px 5px #f5a9627e;
+}
+.yl:hover {
   box-shadow: 0 0 10px 5px #f5a962;
 }

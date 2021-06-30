@@ -1,21 +1,65 @@
 * {
   margin: 0;
   padding: 0;
-  color: #052d55;
+}
+body {
+  background-color: #8ee4af1e;
+}
+/* ::-webkit-scrollbar-track {
+  box-shadow: outset 0 0 4px #05386bde; 
+} */
+.tracker{
+  overflow-x: hidden !important;
+
+}
+::-webkit-scrollbar {
+  width: 15px;
 }
 
-body {
-  background-color: #8ee4af49;
-  padding: 20px;
+::-webkit-scrollbar-thumb {
+  background: #05386b83;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #05386bce;
+}
+h1:hover {
+  cursor: pointer;
+  color: #ff616d;
+  transform: scale(1.1);
+  transition: 0.2s ease-in;
+}
+h10 {
+  display: block;
+  color: #000000d2;
+  font-size: 1.1em;
+}
+h6 {
+  display: block;
+  font-size: 1.17em;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 .select {
   background-color: #ffffff;
   min-width: 150px;
 }
+.select:hover {
+  transform: scale(1.03);
+  transition: 0.1s ease-in;
+}
+.menu:hover {
+  background-color: #05386bce !important;
+  color: #ffffff;
+}
 .app {
   display: flex;
   justify-content: space-evenly;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 .app__header {
   display: flex;
@@ -34,8 +78,7 @@ body {
   justify-content: center;
 }
 .app__left {
-  justify-content: center;
-  align-items: center;
+  padding-top: 2rem;
   flex: 0.85;
 }
 .app__right {
@@ -43,6 +86,25 @@ body {
   flex: 0.4;
 }
 
+@media (max-width: 1200px) {
+  .graph {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (max-width: 1000px) {
+  .app {
+    flex-direction: column;
+  }
+  .app__left {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  .app__right {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
 @media (max-width: 576px) {
   .app__stats {
     padding-left: 2rem;
@@ -52,24 +114,14 @@ body {
   .app__header {
     flex-direction: column;
   }
-  .graph {
-    padding: 0rem !important;
-  }
-}
-@media (max-width: 1000px) {
-  .app {
-    flex-direction: column;
-  }
-  .app__left {
-    margin-bottom: 2rem;
+  .app__header h1 {
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
   .app__right {
-    padding: 0px;
+    padding: 0;
   }
-}
-@media (max-width: 1200px) {
   .graph {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 0;
   }
 }
