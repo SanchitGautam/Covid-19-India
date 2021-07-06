@@ -1,4 +1,4 @@
-# AMAZON CLONE
+# COVID-19 INDIA
 
 Hi! I'm Sanchit Gautam, a **Front-End Developer**. This is a Covid-19 tracker to track cases for all states across **India**.
 I have created it with **React**.
