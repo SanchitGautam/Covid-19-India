@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:700");
+@keyframes showTopText {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(0, 15%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animated-title {
+  height: 45px;
+  left: 0;
+  position: relative;
+  width: 340px;
+}
+.animated-title > div {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+.animated-title > div div {
+  font-size: 40px;
+}
+.animated-title > div.text-top {
+  border-bottom: 7px solid;
+}
+.animated-title > div.text-top div {
+  animation: showTopText 3s infinite;
+  animation-fill-mode: forwards infinite;
+  bottom: 0;
+}

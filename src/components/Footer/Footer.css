@@ -1,27 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 .footer {
-  height: 25vh;
+  height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
 }
 p {
   font-size: 0.9rem;
 }
-.cp{
-  color:#EDF5E1;
+.cp {
+  color: #edf5e1;
   display: flex;
   justify-content: center;
   text-align: center;
   padding: 0.4rem;
-  background: #05386B;
+  background: #05386b;
 }
 .social_links {
   padding: 0.2rem;
-  background: #05386B;
+  background: #05386b;
   border-radius: 1rem;
   margin-top: 1rem;
   display: flex;
@@ -37,12 +40,12 @@ p {
   line-height: 2em;
 }
 .combo .circle {
-  color: #EDF5E1;
+  color: #edf5e1;
   transition: 0.4s ease-in;
   font-size: 2em;
 }
 .combo .icon {
-  color: #05386B;
+  color: #05386b;
   font-size: 1.5rem;
   transform: translateY(1px);
   transition: 0.2s ease-in;
@@ -81,4 +84,10 @@ p {
 .gt:hover,
 .gt:hover .circle {
   color: #505050;
+}
+@media (max-width: 676px) {
+  .footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }

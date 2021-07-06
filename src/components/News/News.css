@@ -1,7 +1,7 @@
 .news {
   margin-top: 0px;
   overflow-y: scroll;
-  height: 180px;
+  height: 210px;
 }
 .tr {
   cursor: pointer;
@@ -16,6 +16,7 @@
   box-shadow: 0 0 8px 4px #05386b46;
 }
 .tr:nth-of-type(odd) {
-  background-color: #05386bce;
-  color: rgb(255, 255, 255);
+  background-color: #05386b;
+  opacity: 0.9;
+  color: #edf5e1;
 }

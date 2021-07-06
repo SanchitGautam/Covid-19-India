@@ -13,6 +13,7 @@
   padding: 0.6rem;
 }
 .table tr:nth-of-type(odd) {
-  background-color:#05386bce;
-  color: rgb(255, 255, 255);
+  background-color: #05386b;
+  opacity: 0.9;
+  color: #edf5e1;
 }

@@ -6,6 +6,16 @@
   transform: scale(1.02);
   transition: 0.4s ease-in;
 }
+.form {
+  margin-bottom: 20px;
+}
+.select1 {
+  min-width: 12rem;
+}
+.select1:hover {
+  transform: scale(1.05);
+  transition: 0.1s ease-in;
+}
 .gr {
   box-shadow: 0 0 10px 5px #66de9480;
 }

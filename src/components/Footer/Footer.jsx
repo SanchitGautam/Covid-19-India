@@ -56,7 +56,10 @@ function Footer() {
         </div>
         <br></br>
       </div>
-      <div className="cp">Copyright @ {n} Covid-19 INDIA | All rights reserved | Developed by: Sanchit</div>
+      <div className="cp">
+        Copyright &#169; {n} Covid-19 INDIA | All rights reserved | Developed by:
+        Sanchit
+      </div>
     </div>
   );
 }

@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
+import { FormControl, MenuItem, Select, InputLabel } from "@material-ui/core";
 import "./Graph.css";
 function Temp({ code, flag }) {
   const [caseData, setData] = useState([]);
+  const [mon, setMon] = useState(3);
+  let months = Array(10);
+  for (let i = 2; i < 17; i++) months[i] = i;
 
   useEffect(() => {
     fetch("https://api.covid19india.org/states_daily.json")
@@ -57,6 +61,9 @@ function Temp({ code, flag }) {
       });
   }, []);
 
+  const handleChange = (event) => {
+    setMon(event.target.value);
+  };
   let dataLen = caseData.length;
   let labelY = [];
   let labelC = [];
@@ -64,21 +71,21 @@ function Temp({ code, flag }) {
   let labelD = [];
   //X- axis Date
   labelY = caseData.filter((x, i) => {
-    return i >= dataLen - 180 && x.Status === "Confirmed";
+    return i >= dataLen - mon * 90 && x.Status === "Confirmed";
   });
 
   //console.log(labelY);
 
   //For different status
   labelC = caseData.filter((x, i) => {
-    return i >= dataLen - 180 && x.Status === "Confirmed";
+    return i >= dataLen - mon * 90 && x.Status === "Confirmed";
   });
   console.log(labelC);
   labelR = caseData.filter((x, i) => {
-    return i >= dataLen - 180 && x.Status === "Recovered";
+    return i >= dataLen - mon * 90 && x.Status === "Recovered";
   });
   labelD = caseData.filter((x, i) => {
-    return i >= dataLen - 180 && x.Status === "Deceased";
+    return i >= dataLen - mon * 90 && x.Status === "Deceased";
   });
 
   if (flag === 1) {
@@ -100,8 +107,34 @@ function Temp({ code, flag }) {
       ],
     };
     return (
-      <div className="line__wrapper yl">
-        <Line data={newData} />
+      <div>
+        <div className="form">
+          <FormControl>
+            <InputLabel>
+              <h10>Select Time Interval</h10>
+            </InputLabel>
+            <Select
+              className="select1"
+              onChange={handleChange}
+              label="Select Time Interval"
+            >
+              <MenuItem className="menu" value="" disabled>
+                Select Time Interval
+              </MenuItem>
+              <MenuItem className="menu" value={1}>
+                Last Month
+              </MenuItem>
+              {months.map((m) => (
+                <MenuItem className="menu" value={m}>
+                  Last {m} months
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+        <div className="line__wrapper yl">
+          <Line data={newData} />
+        </div>
       </div>
     );
   } else if (flag === 3) {
@@ -123,8 +156,34 @@ function Temp({ code, flag }) {
       ],
     };
     return (
-      <div className="line__wrapper rd">
-        <Line data={newData} />
+      <div>
+        <div className="form">
+          <FormControl>
+            <InputLabel>
+              <h10>Select Time Interval</h10>
+            </InputLabel>
+            <Select
+              className="select1"
+              onChange={handleChange}
+              label="Select Time Interval"
+            >
+              <MenuItem className="menu" value="" disabled>
+                Select Time Interval
+              </MenuItem>
+              <MenuItem className="menu" value={1}>
+                Last Month
+              </MenuItem>
+              {months.map((m) => (
+                <MenuItem className="menu" value={m}>
+                  Last {m} months
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+        <div className="line__wrapper rd">
+          <Line data={newData} />
+        </div>
       </div>
     );
   } else {
@@ -146,8 +205,34 @@ function Temp({ code, flag }) {
       ],
     };
     return (
-      <div className="line__wrapper gr">
-        <Line data={newData} />
+      <div>
+        <div className="form">
+          <FormControl>
+            <InputLabel>
+              <h10>Select Time Interval</h10>
+            </InputLabel>
+            <Select
+              className="select1"
+              onChange={handleChange}
+              label="Select Time Interval"
+            >
+              <MenuItem className="menu" value="" disabled>
+                Select Time Interval
+              </MenuItem>
+              <MenuItem className="menu" value={1}>
+                Last Month
+              </MenuItem>
+              {months.map((m) => (
+                <MenuItem className="menu" value={m}>
+                  Last {m} months
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+        <div className="line__wrapper gr">
+          <Line data={newData} />
+        </div>
       </div>
     );
   }

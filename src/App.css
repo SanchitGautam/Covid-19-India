@@ -3,29 +3,30 @@
   padding: 0;
 }
 body {
-  background-color: #8ee4af1e;
+  background-color: #05386b05;
+  background-image: url("https://github.com/SanchitGautam/Covid-19-India/blob/main/public/img/background.png?raw=true");
 }
-/* ::-webkit-scrollbar-track {
-  box-shadow: outset 0 0 4px #05386bde; 
-} */
-.tracker{
-  overflow-x: hidden !important;
-
+body::-webkit-scrollbar {
+  display: none;
+}
+.tracker {
+  overflow-x: hidden;
 }
 ::-webkit-scrollbar {
   width: 15px;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #05386b83;
+  background: #05386bd7;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #05386bce;
+  background: #05386b42;
+}
+h1 {
+  font-size: 3rem;
 }
 h1:hover {
   cursor: pointer;
-  color: #ff616d;
+  color: #05386b;
   transform: scale(1.1);
   transition: 0.2s ease-in;
 }
@@ -37,24 +38,88 @@ h10 {
 h6 {
   display: block;
   font-size: 1.17em;
-  margin-left: 10px;
+  margin-left: 30px;
   font-weight: bold;
 }
-
-body::-webkit-scrollbar {
-  display: none;
+.img {
+  font-size: 3.3rem;
+  text-align: center;
 }
+.image {
+  position: relative;
+  top: 9px;
+  left: -5px;
+  margin-right: -10px;
+  width: 37px;
+  height: 37px;
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.hint {
+  width: 130px;
+  color: #05386b;
+  transition: all 0.5s ease-out;
+  animation-name: grow;
+  animation-duration: 900ms;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+.hint1 {
+  color: #ff616d;
+  width: 150px;
+}
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .select {
   background-color: #ffffff;
   min-width: 150px;
 }
 .select:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
   transition: 0.1s ease-in;
 }
 .menu:hover {
-  background-color: #05386bce !important;
-  color: #ffffff;
+  background-color: #05386b !important;
+  opacity: 0.9;
+  color: #edf5e1;
 }
 .app {
   display: flex;
@@ -64,18 +129,18 @@ body::-webkit-scrollbar {
 .app__header {
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   align-items: center;
 }
 .app__stats {
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .graph {
   padding-left: 9rem;
   padding-right: 9rem;
-  justify-content: center;
+  text-align: center;
 }
 .app__left {
   padding-top: 2rem;
@@ -100,12 +165,19 @@ body::-webkit-scrollbar {
     padding: 0;
     margin-bottom: 2rem;
   }
+  .img {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
   .app__right {
     padding-left: 60px;
     padding-right: 60px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 676px) {
+  h1 {
+    font-size: 2.5rem;
+  }
   .app__stats {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -113,10 +185,9 @@ body::-webkit-scrollbar {
   }
   .app__header {
     flex-direction: column;
-  }
-  .app__header h1 {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    justify-content: center !important;
+    text-align: center;
+    align-items: center;
   }
   .app__right {
     padding: 0;

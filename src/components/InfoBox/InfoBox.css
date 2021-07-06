@@ -1,29 +1,29 @@
 .infoBox {
   cursor: pointer;
 }
-.infoBox:hover{
+.infoBox:hover {
   transform: scale(1.02);
   transition: 0.2s ease-in;
 }
-.infoBox__1{
+.infoBox__1 {
   border-top: 5px solid #f5a962;
   border-bottom: 5px solid #f5a962;
 }
-.infoBox__2{
+.infoBox__2 {
   border-top: 5px solid #66de93;
   border-bottom: 5px solid #66de93;
 }
-.infoBox__3{
+.infoBox__3 {
   border-top: 5px solid #ff616d;
   border-bottom: 5px solid #ff616d;
 }
-.info__1:hover{
+.info__1:hover {
   box-shadow: 0 0 5px 2px #f5a9627e;
 }
-.info__2:hover{
+.info__2:hover {
   box-shadow: 0 0 5px 2px #66de9480;
 }
-.info__3:hover{
+.info__3:hover {
   box-shadow: 0 0 5px 2px #ff616e80;
 }
 .infoBox__cases {
@@ -31,28 +31,27 @@
   font-size: 1.5rem;
   margin-bottom: 0.9rem;
 }
-.cases1{
+.cases1 {
   color: #f5a962;
 }
-.cases2{
+.cases2 {
   color: #66de93;
 }
-.cases3{
+.cases3 {
   color: #ff616d;
 }
 .infoBox__total {
   opacity: 0.7;
 }
-h5{
+h5 {
   padding-top: 0.5rem;
   color: #052d55;
 }
 .infoBox__title {
   font-weight: 1000;
 }
-@media (max-width: 576px)
-{
+@media (max-width: 676px) {
   .infoBox {
-  padding-bottom: 1rem;
-}
+    margin-bottom: 1rem;
+  }
 }

@@ -14,8 +14,9 @@ import News from "./components/News/News";
 import { sortData, sortData1, datetime } from "./util";
 import Temp from "./components/Graph/Graph";
 import Footer from "./components/Footer/Footer";
+import "./components/Animate/Animate.css";
+
 function App() {
-  
   const [states, setStates] = useState([]);
   const [stateInfo, setStateInfo] = useState({});
   const [tableData, setTableData] = useState([]);
@@ -78,11 +79,25 @@ function App() {
     <div className="tracker">
       <div className="app">
         <div className="app__left">
-          {/* <Header /> */}
           <div className="app__header">
-            <h1>
-              Covid-19 <strong>INDIA</strong>
-            </h1>
+          <div className="img">
+            <div class="animated-title">
+              <div class="text-top">
+                <div>
+                  <span>
+                    C
+                    <img
+                      className="image"
+                      src="https://github.com/SanchitGautam/Covid-19-India/blob/main/public/img/virus1.png?raw=true"
+                      alt="icon "
+                    />
+                    vid-19 <strong>INDIA</strong>
+                  </span>
+                </div>
+              </div>
+            </div>
+            </div>
+
             <div className="app__dropdown">
               <FormControl variant="outlined">
                 <InputLabel>
@@ -98,7 +113,9 @@ function App() {
                     Select State
                   </MenuItem>
                   {states.map((state) => (
-                    <MenuItem className="menu" value={state.value}>{state.name}</MenuItem>
+                    <MenuItem className="menu" value={state.value}>
+                      {state.name}
+                    </MenuItem>
                   ))}
                 </Select>
               </FormControl>
@@ -169,22 +186,20 @@ function App() {
           </div>
 
           <div className="graph">
-            
-              <Temp code={stateInfo.statecode} flag={but} />
-            
+            <Temp code={stateInfo.statecode} flag={but} />
           </div>
         </div>
         <div className="app__right">
           <Card>
             <CardContent>
-              <h6> Live Active Cases</h6>
+              <h6 className="hint1 hint"> Live Active Cases</h6>
               <Table states={tableData} />
             </CardContent>
           </Card>
           <br></br>
           <Card>
             <CardContent>
-              <h6> Latest Updates</h6>
+              <h6 className="hint"> Latest Updates</h6>
               <News news={newsData} />
             </CardContent>
           </Card>
