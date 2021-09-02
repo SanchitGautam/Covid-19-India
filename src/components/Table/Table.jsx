@@ -1,6 +1,6 @@
 import React from "react";
 import "./Table.css";
-import { prettyStat } from "../../util";
+import { prettyStat, allst } from "../../util";
 import AnimatedNumber from "animated-number-react";
 
 function Table({ states }) {
@@ -8,7 +8,7 @@ function Table({ states }) {
     <div className="table">
       {states.map(({ state, active }) => (
         <tr>
-          <td>{state}</td>
+          <td>{allst(state)}</td>
           <td>
             <strong>
               <AnimatedNumber

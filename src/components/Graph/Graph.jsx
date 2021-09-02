@@ -5,11 +5,11 @@ import "./Graph.css";
 function Temp({ code, flag }) {
   const [caseData, setData] = useState([]);
   const [mon, setMon] = useState(3);
-  let months = Array(10);
-  for (let i = 2; i < 17; i++) months[i] = i;
+  let months = Array(0);
+  for (let i = 2; i < 18; i++) months[i] = i;
 
   useEffect(() => {
-    fetch("https://api.covid19india.org/states_daily.json")
+    fetch("https://data.covid19india.org/states_daily.json")
       .then((response) => response.json())
       .then((data) => {
         const temp = data.states_daily;

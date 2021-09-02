@@ -11,7 +11,7 @@ import {
 import InfoBox from "./components/InfoBox/InfoBox";
 import Table from "./components/Table/Table";
 import News from "./components/News/News";
-import { sortData, sortData1, datetime } from "./util";
+import { sortData, sortData1, datetime, allst } from "./util";
 import Temp from "./components/Graph/Graph";
 import Footer from "./components/Footer/Footer";
 import "./components/Animate/Animate.css";
@@ -26,7 +26,7 @@ function App() {
   const [dt, setDt] = useState();
   useEffect(() => {
     const getStatesData = async () => {
-      await fetch("https://api.covid19india.org/data.json")
+      await fetch("https://data.covid19india.org/data.json")
         .then((response) => response.json())
         .then((data) => {
           const temp = data.statewise;
@@ -48,9 +48,10 @@ function App() {
   }, []);
   useEffect(() => {
     const getnewsData = async () => {
-      await fetch("https://api.covid19india.org/updatelog/log.json")
+      await fetch("https://data.covid19india.org/updatelog/log.json")
         .then((response) => response.json())
         .then((data) => {
+          console.log(" test  "+data);
           const z = sortData1(data);
           setNewsData(z);
         });
@@ -61,7 +62,7 @@ function App() {
   const onStateChange = async (event) => {
     const stateCode = event.target.value;
 
-    await fetch("https://api.covid19india.org/data.json")
+    await fetch("https://data.covid19india.org/data.json")
       .then((response) => response.json())
       .then((data) => {
         const temp = data.statewise;
@@ -114,7 +115,7 @@ function App() {
                   </MenuItem>
                   {states.map((state) => (
                     <MenuItem className="menu" value={state.value}>
-                      {state.name}
+                      {allst(state.name)}
                     </MenuItem>
                   ))}
                 </Select>

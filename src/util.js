@@ -18,6 +18,10 @@ export const sortData1 = (data) => {
     else return 1;
   });
 };
+export const allst = (state) => {
+  if(state==="Total") return "All States" ;
+  else return state;
+};
 export const prettyStat = (stat) =>
   stat ? `${numeral(stat).format("0,0")}` : "0";
 
